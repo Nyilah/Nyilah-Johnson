@@ -1,22 +1,13 @@
 # Hello World!
 ## My _name_ is **Nyilah Johnson**!
-### This is my smaller header
 
-Im here to learn to code and im very **excited** about it. I wish to start a career and to be very **successful**. This is an **_awsum_** feild to work in and I cant wait to learn **more**.
+Im here to learn to code and im very **excited** about it. I wish to start a career and to be very **successful**. This is an **_awsome_** field to work in and I can't wait to learn **more**!
 
-There are things required of me!
+The things you must know about me are:
+1. I love to read
+2. I am a very determined person
+3. Family is very important to me 
 
-- ~~Be Inspired~~
-- ~~Finish Code Academy~~    
--Finish my Savvy Coders cohort
-
-As you can see Ive finshed most of it. All i have left is finishing Savvy Coders and i can begin my **Journey**!
-
-To finish Savvy Coders I must:
-1. Pay attention in class
-2. Study hard
-3. Make sure my project gets done
-
-[I'm a link]()
+![hello](https://media.wired.com/photos/5be4cd03db23f3775e466767/master/w_582,c_limit/books-521812297.jpg)
 
 
