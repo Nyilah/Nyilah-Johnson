@@ -5,13 +5,6 @@
   --secondary-varient:#000000;;
 }
 
-header,
-section:nth-of-type(odd),
-footer {
-  background: white;
-  color: blue;
-}
-
 body {
   font-family: 'Judson', serif;
   background:var(--secondary);
