@@ -4,8 +4,16 @@
   --secondary:#15657e;
   --secondary-varient:#000000;;
 }
+
+header,
+section:nth-of-type(odd),
+footer {
+  background: white;
+  color: blue;
+}
+
 body {
-  font-family: font-family: 'Judson', serif;
+  font-family: 'Judson', serif;
   background:var(--secondary);
   }
 
@@ -45,6 +53,7 @@ h1 {
 
   p {
     font-size: 32px;
+    margin: calc(var(--base-spacing)*2);
   }
 
   a {
