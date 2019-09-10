@@ -5,12 +5,12 @@
   --secondary-varient:#000000;;
 }
 
-/* header,
+header,
 section:nth-of-type(odd),
 footer {
   background: white;
   color: blue;
-} */
+}
 
 figure {
 display: flex;
@@ -34,13 +34,13 @@ h1 {
 }
 
   img {
-    /* display: block;
+    display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%; */
-    border: 10px inset rgb(109, 112, 116);
-    border-radius: 360px;
-    box-shadow: 20px 15px 0 black;
+    width: 65%; */
+    border: 15px inset rgb(109, 112, 116);
+    /* border-radius: 360px; */
+    box-shadow: 40px 30px 0 black;
   }
 
   h2 {
@@ -73,6 +73,22 @@ h1 {
   font-size: 20px;
 }
 
-/* layout */
+/* nav */
+nav ul {
+  list-style-type: none;
+  text-align: center;
+}
 
+nav a {
+  /* removing underlines */
+  text-decoration: none;
+}
 
+nav li {
+  padding: var(--base-spacing) 2px;
+}
+
+ul {
+  padding: 0;
+
+}
