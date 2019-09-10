@@ -5,6 +5,19 @@
   --secondary-varient:#000000;;
 }
 
+/* header,
+section:nth-of-type(odd),
+footer {
+  background: white;
+  color: blue;
+} */
+
+figure {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
 body {
   font-family: 'Judson', serif;
   background:var(--secondary);
@@ -21,11 +34,13 @@ h1 {
 }
 
   img {
-    display: block;
+    /* display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 50%; */
     border: 10px inset rgb(109, 112, 116);
+    border-radius: 360px;
+    box-shadow: 20px 15px 0 black;
   }
 
   h2 {
@@ -58,5 +73,6 @@ h1 {
   font-size: 20px;
 }
 
+/* layout */
 
 
