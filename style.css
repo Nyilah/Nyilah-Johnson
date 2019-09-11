@@ -41,7 +41,7 @@ h1 {
   text-align: center;
   background: var(--secondary);
   font-size: 7em;
-  margin: 0em, 2em, 1em, 2em;
+  margin: 0 2em 1em 2em;
   padding: 0.2%;
   color: var(--primary);
   text-shadow: -5px 0 #000000;
@@ -106,7 +106,6 @@ nav {
   min-height: 72px;
 }
 
-
 .is-hidden {
   height: 0;
   font-size: 0;
@@ -118,4 +117,7 @@ nav {
   height: 20vh;
   max-height: 420px;
   background-position: center center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
