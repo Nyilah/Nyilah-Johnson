@@ -93,9 +93,21 @@ nav ul {
   text-align: center;
 }
 
-nav a {
+nav a,
+.hero a {
   /* removing underlines */
   text-decoration: none;
+}
+
+.hero a {
+  background-color: var(--secondary);
+  padding: var(--base-spacing);
+  border-radius: var(--base-spacing);
+  box-shadow: var(--base-spacing);
+}
+
+.hero a:hover {
+
 }
 
 ul {
