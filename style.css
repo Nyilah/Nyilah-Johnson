@@ -1,12 +1,16 @@
 :root {
-  --background: #00c3ff;
+  --background: #3f00ff52;
   --background-variant: #ffffff;
   --error: #b00020;
-  --primary-text: #15657e;
+  --primary-text: #000000;
   --secondary-text: #000000;
+  --wht-text: #ffffff;
+  --border: #000000;
+  --border-variant: #6d7074;
+  --btn-back: #ad00b0bf;
   --base-spacing: 8px;
   --border-primary: solid var(--primary-variant) 3px;
-  --border-secondary: solid var(--secondary-variant) 3px;
+  --foot-back: #ad00b033;
 }
 
 body {
@@ -21,6 +25,8 @@ header {
 }
 
 section {
+  display: flex;
+  flex-direction: column;
   padding: calc(var(--base-spacing) * 3);
   margin: calc(var(--base-spacing) * 3);
 }
@@ -40,12 +46,12 @@ h2 {
   margin: 0px;
 }
 
-img{
+img {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 42%;
-  border: 15px inset rgb(109, 112, 116);
+  width: 50%;
+  border: 15px inset var(--border-variant);
   /* makes image a circle
   border-radius: 360px;
   makes image 3d like
@@ -59,20 +65,21 @@ h1 {
   font-size: calc(var(--base-spacing) * 4.5);
   margin: 0 2em 1em 2em;
   padding: 0;
-  color: var(--secondary-text);
+  color: var(--primary-text);
   /* text-shadow: -5px 0 #000000; */
 }
 
 h2 {
-  color: var(--secondary-text);
+  color: var(--primary-text);
   display: flex;
   justify-content: center;
   font-size: calc(var(--base-spacing) * 3.5);
 }
 
 p {
-  font-size: calc(var(--base-spacing)*2.5);
+  font-size: calc(var(--base-spacing) * 2.5);
   margin: calc(var(--base-spacing) * 1);
+  color: var(--secondary-text);
 }
 
 /* nav */
@@ -94,19 +101,23 @@ nav {
 
 /* footer */
 footer a {
-  color: rgb(155, 50, 50);
+  padding: 2px;
+  background: var(--btn-back);
+  color: var(--wht-text);
 }
 
 footer ul {
   /* by default this will do flex direction row */
   display: flex;
   justify-content: space-between;
-  padding: 0;
+  /* padding: 0; */
   list-style-type: none;
+  padding: 2px;
+  background-color: var(--foot-back);
 }
 
 footer p {
-  font-size: 16px;
+  font-size: calc(var(--base-spacing)*1.5);
 }
 
 /* class selectors */
@@ -137,11 +148,13 @@ nav a {
 .hero a {
   display: inline-block;
   background-color: var(--secondary);
-  padding: var(--base-spacing);
+  padding: calc(var(--base-spacing) * 2);
   border-radius: var(--base-spacing);
   box-shadow: var(--base-spacing);
-  font-size: calc(var(--base-spacing)*2);
-  background: #b00020
+  font-size: calc(var(--base-spacing) * 2);
+  background: var(--btn-back);
+  color: var(--wht-text);
+  font-weight: bold;
 }
 
 .read-more-btn {
@@ -149,9 +162,27 @@ nav a {
   padding: var(--base-spacing);
   border-radius: var(--base-spacing);
   display: inline-block;
-  font-size: calc(var(--base-spacing)*2)
+  font-size: calc(var(--base-spacing) * 2);
+  font-weight: bold;
+  /* align-self: center; */
 }
 
 .footer {
   padding: calc(var(--base-spacing) * 2.5);
+}
+
+@media screen and (min-width: 768px) {
+  footer {
+    background: #800080;
+  }
+
+  .read-more-btn {
+    color: var(--secondary);
+    padding: var(--base-spacing);
+    border-radius: var(--base-spacing);
+    display: inline-block;
+    font-size: calc(var(--base-spacing) * 2);
+    font-weight: bold;
+    align-self: center;
+  }
 }
