@@ -1,16 +1,32 @@
 :root {
-  --primary: rgb(100, 94, 91);
-  --primary-varient: #6e532f;
-  --secondary: #15657e;
-  --secondary-varient: #000000;
+  --background: #00c3ff;
+  --background-variant: #ffffff;
+  --error: #b00020;
+  --primary-text: #15657e;
+  --secondary-text: #000000;
   --base-spacing: 8px;
+  --border-primary: solid var(--primary-variant) 3px;
+  --border-secondary: solid var(--secondary-variant) 3px;
 }
 
-header,
-section:nth-of-type(odd),
-footer {
-  background: white;
-  color: blue;
+body {
+  font-family: "Titillium Web", sans-serif;
+  background: var(--background);
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section {
+  padding: calc(var(--base-spacing) * 3);
+  margin: calc(var(--base-spacing) * 3);
+}
+
+section:nth-of-type(odd) {
+  background: var(--background-variant);
 }
 
 figure {
@@ -19,104 +35,81 @@ figure {
   align-items: center;
 }
 
-img {
+figure,
+h2 {
+  margin: 0px;
+}
+
+img{
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 65%;
+  width: 42%;
   border: 15px inset rgb(109, 112, 116);
-  /* makes image a circle */
-  /* border-radius: 360px; */
-  /* makes image 3d like */
-  /* box-shadow: 40px 30px 0 black; */
-  padding: 2px;
-}
-
-body {
-  font-family: "Judson", serif;
-  background: var(--secondary);
+  /* makes image a circle
+  border-radius: 360px;
+  makes image 3d like
+  box-shadow: 40px 30px 0 black; */
 }
 
 h1 {
+  display: flex;
+  align-items: center;
   text-align: center;
-  background: var(--secondary);
-  font-size: 7em;
+  font-size: calc(var(--base-spacing) * 4.5);
   margin: 0 2em 1em 2em;
-  padding: 0.2%;
-  color: var(--primary);
-  text-shadow: -5px 0 #000000;
+  padding: 0;
+  color: var(--secondary-text);
+  /* text-shadow: -5px 0 #000000; */
 }
 
 h2 {
-  color: var(--primary);
-  text-align: center;
-  font-size: 80px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-  text-shadow: -5px 0 #000000;
-}
-
-li {
-  font-size: 30px;
-  color: var(--secondary-varient);
+  color: var(--secondary-text);
+  display: flex;
+  justify-content: center;
+  font-size: calc(var(--base-spacing) * 3.5);
 }
 
 p {
-  font-size: 32px;
-  margin: calc(var(--base-spacing) * 2);
+  font-size: calc(var(--base-spacing)*2.5);
+  margin: calc(var(--base-spacing) * 1);
 }
 
-a {
-  color: var(--secondary-varient);
-  font-size: 30px;
-}
-
-.fas {
-  font-size: 48px;
-}
-
+/* nav */
 nav .fas {
   margin: 10px;
   transform: translateX(calc(100vw - var(--base-spacing) * 10));
   position: absolute;
+  font-size: 40px;
 }
 
-.copy {
-  font-size: 20px;
-}
-
-/* nav */
 nav ul {
   list-style-type: none;
   text-align: center;
 }
 
-nav a,
-.hero a {
-  /* removing underlines */
-  text-decoration: none;
-}
-
-.hero a {
-  background-color: var(--secondary);
-  padding: var(--base-spacing);
-  border-radius: var(--base-spacing);
-  box-shadow: var(--base-spacing);
-}
-
-.hero a:hover {
-
-}
-
-ul {
-  padding: 0;
-}
-
 nav {
   min-height: 72px;
 }
+
+/* footer */
+footer a {
+  color: rgb(155, 50, 50);
+}
+
+footer ul {
+  /* by default this will do flex direction row */
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  list-style-type: none;
+}
+
+footer p {
+  font-size: 16px;
+}
+
+/* class selectors */
 
 .is-hidden {
   height: 0;
@@ -132,4 +125,33 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.hero a,
+.footer a,
+nav a {
+  /* removing underlines */
+  text-decoration: none;
+}
+
+.hero a {
+  display: inline-block;
+  background-color: var(--secondary);
+  padding: var(--base-spacing);
+  border-radius: var(--base-spacing);
+  box-shadow: var(--base-spacing);
+  font-size: calc(var(--base-spacing)*2);
+  background: #b00020
+}
+
+.read-more-btn {
+  color: var(--secondary);
+  padding: var(--base-spacing);
+  border-radius: var(--base-spacing);
+  display: inline-block;
+  font-size: calc(var(--base-spacing)*2)
+}
+
+.footer {
+  padding: calc(var(--base-spacing) * 2.5);
 }
