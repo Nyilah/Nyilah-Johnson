@@ -48,10 +48,8 @@ h2 {
 
 img {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
   border: 15px inset var(--border-variant);
+  max-width: 200px;
   /* makes image a circle
   border-radius: 360px;
   makes image 3d like
@@ -59,9 +57,6 @@ img {
 }
 
 h1 {
-  display: flex;
-  align-items: center;
-  text-align: center;
   font-size: calc(var(--base-spacing) * 4.5);
   margin: 0 2em 1em 2em;
   padding: 0;
@@ -71,8 +66,6 @@ h1 {
 
 h2 {
   color: var(--primary-text);
-  display: flex;
-  justify-content: center;
   font-size: calc(var(--base-spacing) * 3.5);
 }
 
@@ -87,6 +80,9 @@ nav .fas {
   margin: 10px;
   transform: translateX(calc(100vw - var(--base-spacing) * 10));
   position: absolute;
+}
+
+.fas {
   font-size: 40px;
 }
 
@@ -96,7 +92,7 @@ nav ul {
 }
 
 nav {
-  min-height: 72px;
+  min-height: 78px;
 }
 
 /* footer */
@@ -122,7 +118,7 @@ footer p {
 
 /* class selectors */
 
-.is-hidden {
+.is-hidden--mobile {
   height: 0;
   font-size: 0;
 }
@@ -168,7 +164,7 @@ nav a {
 }
 
 .footer {
-  padding: calc(var(--base-spacing) * 2.5);
+  padding: calc(var(--base-spacing) * 1);
 }
 
 @media screen and (min-width: 768px) {
@@ -185,4 +181,36 @@ nav a {
     font-weight: bold;
     align-self: center;
   }
+
+  .is-hidden--tablet {
+    height: 0;
+    font-size: 0;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  header {
+    display:flex;
+    flex-direction: row;
+    padding: var(--base-spacing);
+  }
+
+  figure {
+    margin-right: calc(var(--base-spacing)* 2);
+  }
+
+  .is-hidden--desktop {
+    height: 0;
+    font-size: 0;
+  }
+
+  .is-shown--desktop {
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center space-around;
+    justify-content: space-around;
+    /* min-height: 10px; */
+  }
+
 }
