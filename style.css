@@ -113,7 +113,7 @@ footer ul {
 }
 
 footer p {
-  font-size: calc(var(--base-spacing)*1.5);
+  font-size: calc(var(--base-spacing) * 1.5);
 }
 
 /* class selectors */
@@ -192,13 +192,13 @@ nav a {
 
 @media screen and (min-width: 1024px) {
   header {
-    display:flex;
+    display: flex;
     flex-direction: row;
     padding: var(--base-spacing);
   }
 
   figure {
-    margin-right: calc(var(--base-spacing)* 2);
+    margin-right: calc(var(--base-spacing) * 2);
   }
 
   .is-hidden--desktop {
@@ -210,17 +210,16 @@ nav a {
     font-size: 20px;
     display: flex;
     flex-direction: row;
-    justify-content: center space-around;
+    justify-content: center;
     justify-content: space-around;
     /* min-height: 10px; */
   }
 
-  .flex-container--desktop{
+  .flex-container--desktop {
     display: flex;
   }
 
   section p {
     margin-bottom: auto;
   }
-
 }
