@@ -167,6 +167,8 @@ nav a {
   padding: calc(var(--base-spacing) * 1);
 }
 
+/* media-queries */
+
 @media screen and (min-width: 768px) {
   footer {
     background: #800080;
@@ -211,6 +213,14 @@ nav a {
     justify-content: center space-around;
     justify-content: space-around;
     /* min-height: 10px; */
+  }
+
+  .flex-container--desktop{
+    display: flex;
+  }
+
+  section p {
+    margin-bottom: auto;
   }
 
 }
