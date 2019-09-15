@@ -20,7 +20,7 @@ body {
   background: var(--background);
 }
 
- header {
+header {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -57,7 +57,6 @@ section {
 section:nth-of-type(odd) {
   background: var(--background-variant);
 }
-
 
 h1 {
   font-size: calc(var(--base-spacing) * 4.5);
@@ -165,7 +164,7 @@ nav a {
 }
 
 .footer {
-  padding: calc(var(--base-spacing) * .5);
+  padding: calc(var(--base-spacing) * 0.5);
 }
 
 /* Contact form */
@@ -177,8 +176,8 @@ form {
 }
 
 input,
-textarea{
-border: solid thin black;
+textarea {
+  border: solid thin black;
 }
 
 form div {
@@ -188,9 +187,17 @@ form div {
   max-width: 70vw;
 }
 
+input[type="tel"],
+[type="email"],
+[type="text"] {
+  border-radius: 30px;
+  padding: .2em;
+  font-size: 1em;
+}
+
 input[type="submit"] {
-  max-width: calc(var(--base-spacing)* 8);
-  min-height: calc(var(--base-spacing)* 2);
+  max-width: calc(var(--base-spacing) * 8);
+  min-height: calc(var(--base-spacing) * 2);
   text-align: center;
   padding: 3px;
   border-radius: 30px;
@@ -199,20 +206,24 @@ input[type="submit"] {
 /* media-queries for sml mobile screens */
 
 @media screen and (min-width: 320px) {
-h1 {
-  font-size: calc(var(--base-spacing)* 3);
-}
+  h1 {
+    font-size: calc(var(--base-spacing) * 3);
+  }
+
+  img {
+    height: 160px;
+  }
 }
 
 /* media-queries for tablet*/
 
 @media screen and (min-width: 768px) {
   img {
-  height: 190px;
+    height: 190px;
   }
 
   h1 {
-    font-size: calc(var(--base-spacing)* 5)
+    font-size: calc(var(--base-spacing) * 5);
   }
 
   .read-more-btn {
@@ -228,6 +239,10 @@ h1 {
   .is-hidden--tablet {
     height: 0;
     font-size: 0;
+  }
+
+  footer ul {
+    justify-content: space-evenly;
   }
 }
 
@@ -258,6 +273,11 @@ h1 {
     /* min-height: 10px; */
   }
 
+  nav a {
+    color: var(--primary-text);
+    font-weight: bold;
+  }
+
   .flex-container--desktop {
     display: flex;
   }
@@ -267,10 +287,14 @@ h1 {
   }
 
   h1 {
-    font-size: calc(var(--base-spacing)* 6.5);
+    font-size: calc(var(--base-spacing) * 6.5);
   }
 
   img {
     height: 220px;
+  }
+
+  footer li {
+    font-weight: bold;
   }
 }
