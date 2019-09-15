@@ -13,15 +13,38 @@
   --foot-back: #ad00b033;
 }
 
+/* body */
+
 body {
   font-family: "Titillium Web", sans-serif;
   background: var(--background);
 }
 
-header {
+ header {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+/* figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */
+
+figure,
+h2 {
+  margin: 0px;
+}
+
+img {
+  display: block;
+  border: 15px inset var(--border-variant);
+  height: 100px;
+  /* makes image a circle
+  border-radius: 360px;
+  makes image 3d like
+  box-shadow: 40px 30px 0 black; */
 }
 
 section {
@@ -35,30 +58,9 @@ section:nth-of-type(odd) {
   background: var(--background-variant);
 }
 
-figure {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-figure,
-h2 {
-  margin: 0px;
-}
-
-img {
-  display: block;
-  border: 15px inset var(--border-variant);
-  max-width: 200px;
-  /* makes image a circle
-  border-radius: 360px;
-  makes image 3d like
-  box-shadow: 40px 30px 0 black; */
-}
 
 h1 {
   font-size: calc(var(--base-spacing) * 4.5);
-  margin: 0 2em 1em 2em;
   padding: 0;
   color: var(--primary-text);
   /* text-shadow: -5px 0 #000000; */
@@ -96,8 +98,9 @@ nav {
 }
 
 /* footer */
+
 footer a {
-  padding: 2px;
+  /* padding: 2px; */
   background: var(--btn-back);
   color: var(--wht-text);
 }
@@ -164,10 +167,38 @@ nav a {
 }
 
 .footer {
-  padding: calc(var(--base-spacing) * 1);
+  /* padding: calc(var(--base-spacing) * 1); */
 }
 
-/* media-queries */
+/* Contact form */
+
+form {
+  padding: var(--base-spacing);
+  display: flex;
+  flex-direction: column;
+}
+
+input,
+textarea{
+border: solid thin black;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+  margin: var(--base-spacing);
+  max-width: 70vw;
+}
+
+input[type="submit"] {
+  max-width: calc(var(--base-spacing)* 8);
+  min-height: calc(var(--base-spacing)* 2);
+  text-align: center;
+  padding: 3px;
+  border-radius: 30px;
+}
+
+/* media-queries for tablet*/
 
 @media screen and (min-width: 768px) {
   footer {
@@ -189,6 +220,8 @@ nav a {
     font-size: 0;
   }
 }
+
+/* media queries for desktop */
 
 @media screen and (min-width: 1024px) {
   header {
