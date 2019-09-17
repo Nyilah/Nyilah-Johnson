@@ -178,6 +178,7 @@ form {
 input,
 textarea {
   border: solid thin black;
+  max-width: 51vw;
 }
 
 form div {
@@ -191,7 +192,7 @@ input[type="tel"],
 [type="email"],
 [type="text"] {
   border-radius: 30px;
-  padding: .2em;
+  padding: 0.2em;
   font-size: 1em;
 }
 
@@ -203,15 +204,22 @@ input[type="submit"] {
   border-radius: 30px;
 }
 
+textarea {
+  border-radius: 15px;
+}
 /* media-queries for sml mobile screens */
 
-@media screen and (min-width: 320px) {
+@media screen and (min-width: 320px) and (max-width: 1023px) {
   h1 {
     font-size: calc(var(--base-spacing) * 3);
   }
 
   img {
     height: 160px;
+  }
+
+  form {
+    align-items: center;
   }
 }
 
@@ -278,8 +286,9 @@ input[type="submit"] {
     font-weight: bold;
   }
 
-  .flex-container--desktop {
+  .flex-container--desktop-flexrow--desktop {
     display: flex;
+    flex-direction: row;
   }
 
   section p {
@@ -297,4 +306,16 @@ input[type="submit"] {
   footer li {
     font-weight: bold;
   }
+
+  label {
+    font-size: 1.2em;
+  }
+}
+
+/* javascript classes error messages */
+
+.is-error {
+}
+
+.is-success {
 }
