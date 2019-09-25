@@ -268,8 +268,8 @@ textarea {
   }
 
   .is-hidden--desktop {
-    height: 0;
-    font-size: 0;
+    height: 0px;
+    font-size: 0px;
   }
 
   .is-shown--desktop {
@@ -319,3 +319,4 @@ textarea {
 
 .is-success {
 }
+
