@@ -9,9 +9,9 @@
 //   return answer;
 // }
 
-let greet = prompt(question = "What is your name?");
+// let greet = prompt(question = "What is your name?");
 
-alert("hey" + greet);
+// alert("hey" + greet);
 // function greeter(question) {
 //     let answer = greet;
 
@@ -61,3 +61,5 @@ alert("hey" + greet);
 //   total += i;
 //   i++;
 //
+
+document.querySelector("#root").innerHTML = `<p>${greeter()}</p>`
