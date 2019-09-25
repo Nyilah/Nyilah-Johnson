@@ -5,4 +5,6 @@
 const hamburger = document.querySelector('.fa-hamburger');
 const hiddenul = document.querySelector('ul');
 
-
+hamburger.addEventListener("click", function() {
+console.log("hello from burger");
+});
