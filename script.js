@@ -5,6 +5,6 @@
 const hamburger = document.querySelector('.fa-hamburger');
 const hiddenul = document.querySelector('ul');
 
-hamburger.addEventListener("click", function() {
+hamburger.addEventListener("click", () => {
 hiddenul.classList.toggle('is-hidden--mobile');
 });
