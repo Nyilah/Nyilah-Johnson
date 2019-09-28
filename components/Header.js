@@ -1,4 +1,5 @@
-export default `<header>
+export default function(Heading) {
+return `<header>
 <figure>
   <img src="brendan-digital-strategist-GfFFOqiTH4M-unsplash.jpg" alt="" />
   <!-- srcset="
@@ -8,5 +9,6 @@ export default `<header>
       brendan-digital-strategist-GfFFOqiTH4M-unsplash.jpg/600 3x
       " -->
 </figure>
-<h1>Nyilah Johnson's Project</h1>
+<h1>${Heading}</h1>
 </header>`
+}

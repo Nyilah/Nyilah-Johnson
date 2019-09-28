@@ -1,4 +1,5 @@
-export default `<footer>
+export default function(Foot) {
+  `<footer>
       <ul class="footer">
         <li><a href="./">Home</a></li>
         <li><a href="./About">About</a></li>
@@ -8,3 +9,4 @@ export default `<footer>
       </ul>
       <p>&copy; Nyilah Johnson no rights reserved</p>
     </footer>`
+}

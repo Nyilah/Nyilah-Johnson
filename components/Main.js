@@ -1,4 +1,5 @@
-export default `<main>
+export default function(Paragraphs) {
+`<main>
       <div class="hero">
         <a href="#">fake cta button</a>
       </div>
@@ -28,6 +29,7 @@ export default `<main>
           </p>
           <a href="" class="read-more-btn">Read More</a>
         </section>
+}
 
         <section>
           <h2>Some fake heading</h2>
