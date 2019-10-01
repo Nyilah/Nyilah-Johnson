@@ -6,7 +6,7 @@ import Footer from"./components/Footer";
 
 document.querySelector("#root").innerHTML =`
 ${Header('Hello from an spa')}
-${Nav}
-${Main}
-${Footer}
+${Nav()}
+${Main()}
+${Footer('&copy; Nyilah Johnson no rights reserved')}
 `

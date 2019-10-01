@@ -1,5 +1,5 @@
-export default function(Paragraphs) {
-`<main>
+export default function() {
+return `<main>
       <div class="hero">
         <a href="#">fake cta button</a>
       </div>
@@ -43,3 +43,6 @@ export default function(Paragraphs) {
         </section>
       </div>
     </main>`
+
+}
+
