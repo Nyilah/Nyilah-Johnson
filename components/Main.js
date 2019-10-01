@@ -29,7 +29,6 @@ return `<main>
           </p>
           <a href="" class="read-more-btn">Read More</a>
         </section>
-}
 
         <section>
           <h2>Some fake heading</h2>
