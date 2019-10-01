@@ -4,8 +4,20 @@
 // import Footer from"./components/Footer";
 import{Header, Nav, Main, Footer} from "./components"
 
+// use state to render the appropriate heading
+// depending on the state of the app what page is actually
+// selected or being displayed
+const state = {
+  home: {
+    heading: 'Home Page'
+  },
+  about: {
+    heading: 'About Page'
+  }
+};
+
 document.querySelector("#root").innerHTML =`
-${Header('Hello from an spa')}
+${Header(state.home.heading)}
 ${Nav()}
 ${Main()}
 ${Footer('&copy; Nyilah Johnson no rights reserved')}
