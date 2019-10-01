@@ -22,3 +22,11 @@ ${Nav()}
 ${Main()}
 ${Footer('&copy; Nyilah Johnson no rights reserved')}
 `
+
+const aboutLink = document.querySelector('#about');
+
+  aboutLink.addEventListener('click', function(event){
+  event.preventDefault();
+  console.log('you clicked me');
+  console.log(state[event.target.textContent]);
+  })
