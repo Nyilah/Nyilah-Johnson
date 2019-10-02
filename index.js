@@ -15,18 +15,23 @@ const state = {
     heading: 'About Page'
   }
 };
-
+//the parameter st repreesents a piece of state
+function render(st = state.home) {
 document.querySelector("#root").innerHTML =`
-${Header(state.home.heading)}
+${Header(st.heading)}
 ${Nav()}
 ${Main()}
-${Footer('&copy; Nyilah Johnson no rights reserved')}
-`
+${Footer()}
+`;
+}
 
-const aboutLink = document.querySelector('#about');
+render();
 
-  aboutLink.addEventListener('click', function(event){
+const links = document.querySelectorAll('nav a');
+
+  for(let i = 0; i < links.length; i+= 1) {
+  links[i].addEventListener('click', function(event){
   event.preventDefault();
-  console.log('you clicked me');
-  console.log(state[event.target.textContent]);
+  render(state[event.target.textContent]);
   })
+  }
