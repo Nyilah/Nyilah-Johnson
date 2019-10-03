@@ -13,7 +13,14 @@ const state = {
   },
   about: {
     heading: 'About Page'
-  }
+  },
+  contact: {
+    heading: 'Contact Page'
+  },
+  Gallery: {
+    heading: 'Gallery Page'
+  },
+  //TODO add links array to each piece of state
 };
 //the parameter st repreesents a piece of state
 function render(st = state.home) {
