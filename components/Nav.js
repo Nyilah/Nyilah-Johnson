@@ -1,5 +1,5 @@
-export default function(Navigation) {
-`<nav>
+export default function() {
+ return `<nav>
       <span class="fas fa-hamburger is-hidden--desktop"></span>
       <ul class="is-hidden--mobile is-hidden--tablet is-shown--desktop">
         <li><a href="./">Home</a></li>
@@ -9,4 +9,5 @@ export default function(Navigation) {
         <li><a href="./Blog">Blog</a></li>
       </ul>
     </nav>`
+    ;
 }
