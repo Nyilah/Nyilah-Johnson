@@ -42,6 +42,5 @@ return `<main>
         </section>
       </div>
     </main>`
-
-}
-
+    ;
+  }
