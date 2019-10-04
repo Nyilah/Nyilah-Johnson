@@ -10,7 +10,7 @@
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
   "workbench.enableExperiments": false,
-  "workbench.colorTheme": "Signed Dark Pro",
+  "workbench.colorTheme": "Monokai",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.view.alwaysShowHeaderActions": true,
   "terminal.integrated.fontFamily": "'Inconsolata', monospace",

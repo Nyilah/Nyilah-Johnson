@@ -1,4 +1,4 @@
-export default function(Heading) {
+export default function(state) {
 return `<header>
 <figure>
   <img src="brendan-digital-strategist-GfFFOqiTH4M-unsplash.jpg" alt="" />
@@ -9,6 +9,6 @@ return `<header>
       brendan-digital-strategist-GfFFOqiTH4M-unsplash.jpg/600 3x
       " -->
 </figure>
-<h1>${Heading}</h1>
+<h1>${state.heading}</h1>
 </header>`
 }

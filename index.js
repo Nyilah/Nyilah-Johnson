@@ -9,26 +9,30 @@ import{Header, Nav, Main, Footer} from "./components"
 // selected or being displayed
 const state = {
   home: {
-    heading: 'Home Page'
+    heading: 'Home Page',
+    links:['Home', 'About', 'Contact', 'Blog', 'Gallery']
   },
   about: {
-    heading: 'About Page'
+    heading: 'About Page',
+    links:['Home', 'About', 'Contact', 'Blog', 'Gallery']
   },
   contact: {
-    heading: 'Contact Page'
+    heading: 'Contact Page',
+    links:['Home', 'About', 'Contact', 'Blog', 'Gallery']
   },
   Gallery: {
-    heading: 'Gallery Page'
+    heading: 'Gallery Page',
+    links:['Home', 'About', 'Contact', 'Blog', 'Gallery']
   }
   //TODO add links array to each piece of state
 };
 //the parameter st repreesents a piece of state
 function render(st = state.home) {
 document.querySelector("#root").innerHTML =`
-${Header(st.heading)}
-${Nav()}
-${Main()}
-${Footer()}
+${Header(st)}
+${Nav(st)}
+${Main(st)}
+${Footer(st)}
 `;
 }
 
