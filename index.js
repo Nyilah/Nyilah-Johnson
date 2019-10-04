@@ -4,31 +4,13 @@
 // import Footer from"./components/Footer";
 import{Header, Nav, Main, Footer} from "./components"
 
+import{Home, About, Contact, Blog, Gallery, Links} from "./store";
 // use state to render the appropriate heading
 // depending on the state of the app what page is actually
 // selected or being displayed
-const state = {
-  home: {
-    heading: 'Home Page',
-    links:['Home', 'About', 'Contact', 'Blog', 'Gallery']
-  },
-  about: {
-    heading: 'About Page',
-    links:['Home', 'About', 'Contact', 'Blog', 'Gallery']
-  },
-  contact: {
-    heading: 'Contact Page',
-    links:['Home', 'About', 'Contact', 'Blog', 'Gallery']
-  },
-  Gallery: {
-    heading: 'Gallery Page',
-    links:['Home', 'About', 'Contact', 'Blog', 'Gallery']
-  }
-  //TODO add links array to each piece of state
-};
-//the parameter st repreesents a piece of state
-function render(st = state.home) {
-document.querySelector("#root").innerHTML =`
+//the parameter st represents a piece of state
+function render(st = Home) {
+document.querySelector("nav a, footer a").innerHTML =`
 ${Header(st)}
 ${Nav(st)}
 ${Main(st)}
@@ -43,6 +25,6 @@ const links = document.querySelectorAll("nav a");
 for (let i = 0; i < links.length; i += 1) {
   links[i].addEventListener("click", function(event) {
     event.preventDefault();
-    render(state[event.target.textContent.toLowerCase()]);
+    render(event.target.textContent);
   });
 }
