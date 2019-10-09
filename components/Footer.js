@@ -1,5 +1,5 @@
-export default function(footing) {
-  return `<footer>
+export default footing =>
+  `<footer>
       <ul class="footer">
         <li><a href="./">Home</a></li>
         <li><a href="./About">About</a></li>
@@ -9,5 +9,5 @@ export default function(footing) {
       </ul>
       <p>${footing}</p>
     </footer>`
-    ;
-}
+
+

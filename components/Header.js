@@ -1,5 +1,5 @@
-export default function(state) {
-return `<header>
+export default state =>
+  `<header>
 <figure>
   <img src="brendan-digital-strategist-GfFFOqiTH4M-unsplash.jpg" alt="" />
   <!-- srcset="
@@ -11,4 +11,4 @@ return `<header>
 </figure>
 <h1>${state.heading}</h1>
 </header>`
-}
+

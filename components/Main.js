@@ -1,5 +1,5 @@
-export default function() {
-return `<main>
+export default () =>
+  `<main>
       <div class="hero">
         <a href="#">fake cta button</a>
       </div>
@@ -43,4 +43,4 @@ return `<main>
       </div>
     </main>`
     ;
-  }
+

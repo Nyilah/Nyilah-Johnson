@@ -9,12 +9,11 @@ function linksBuilder(links) {
   return linksHTML;
 }
 
-export default function() {
-  console.log(Links);
-  return `<nav>
+export default () =>
+  `<nav>
       <span class="fas fa-hamburger is-hidden--desktop"></span>
       <ul class="is-hidden--mobile is-hidden--tablet is-shown--desktop">
         ${linksBuilder(Links)}
       </ul>
     </nav>`;
-}
+
