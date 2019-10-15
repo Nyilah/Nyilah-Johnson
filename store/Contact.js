@@ -1,3 +1,4 @@
 export default {
-  heading: 'Contact Page'
+  heading: 'Contact Page',
+  main: '<p>contacts added soon</p>'
 };

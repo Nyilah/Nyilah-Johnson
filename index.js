@@ -16,9 +16,6 @@ ${Nav(st)}
 ${Main(st)}
 ${Footer(st)}
 `;
-}
-
-render();
 
 const links = document.querySelectorAll("nav a, footer a");
 
@@ -28,3 +25,6 @@ for (let i = 0; i < links.length; i += 1) {
     render(state[event.target.textContent]);
   });
 }
+}
+
+render();

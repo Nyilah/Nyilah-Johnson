@@ -11,4 +11,5 @@ export default state =>
 </figure>
 <h1>${state.heading}</h1>
 </header>`
+;
 
