@@ -5,6 +5,10 @@
 import{Header, Nav, Main, Footer} from "./components"
 
 import * as state from "./store";
+
+import Navigo from "navigo";
+
+const router = new Navigo(location.origin);
 // use state to render the appropriate heading
 // depending on the state of the app what page is actually
 // selected or being displayed
