@@ -9,6 +9,8 @@ import * as state from "./store";
 import Navigo from "navigo";
 
 const router = new Navigo(location.origin);
+
+
 // use state to render the appropriate heading
 // depending on the state of the app what page is actually
 // selected or being displayed
@@ -17,18 +19,18 @@ const router = new Navigo(location.origin);
 function render(st = state.Home) {
 document.querySelector("#root").innerHTML =`
 ${Header(st)}
-${Nav(st)}
+${Nav()}
 ${Main(st)}
-${Footer(st)}
+${Footer()}
 `;
 
-const links = document.querySelectorAll("nav a, footer a");
+router.updatePageLinks();
+}
 
-for (let i = 0; i < links.length; i += 1) {
-  links[i].addEventListener("click", function(event) {
-    event.preventDefault();
-    render(state[event.target.textContent]);
-  });
-}
-}
-render();
+router
+
+.on(':page', params => render(state[`${params.page.slice(0, 1).toUpperCase()}${params.page.slice(1).toLowerCase()}`])
+)
+.on("/", render())
+.resolve();
+
