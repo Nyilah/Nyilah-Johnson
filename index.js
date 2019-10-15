@@ -9,6 +9,7 @@ import * as state from "./store";
 // depending on the state of the app what page is actually
 // selected or being displayed
 //the parameter st represents a piece of state
+
 function render(st = state.Home) {
 document.querySelector("#root").innerHTML =`
 ${Header(st)}
@@ -26,5 +27,4 @@ for (let i = 0; i < links.length; i += 1) {
   });
 }
 }
-
 render();
