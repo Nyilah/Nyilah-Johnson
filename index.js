@@ -8,6 +8,9 @@ import * as state from "./store";
 
 import Navigo from "navigo";
 
+import axios from "axios";
+
+
 const router = new Navigo(location.origin);
 
 
@@ -34,3 +37,6 @@ router
 .on("/", render())
 .resolve();
 
+axios
+  .get("https://jsonplaceholder.typicode.com/posts")
+  .then(response => console.log(response.data));

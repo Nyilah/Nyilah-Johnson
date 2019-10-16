@@ -16,7 +16,7 @@
     "css",
     "java",
     "script",
-    "sp"
+    "spa"
   ],
   "author": "Nyilah johnson",
   "license": "ISC",
@@ -37,6 +37,7 @@
     "stylelint-prettier": "^1.1.1"
   },
   "dependencies": {
+    "axios": "^0.19.0",
     "navigo": "^7.1.2"
   }
 }
