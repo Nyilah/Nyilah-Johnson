@@ -39,4 +39,14 @@ router
 
 axios
   .get("https://jsonplaceholder.typicode.com/posts")
-  .then(response => console.log(response.data));
+  .then(response => {
+state.Blog.main = response.data;
+const firstPost = response.data[0];
+const demoHTML= `
+<article>
+<h2>${firstPost.title}</h2>
+  <p>${firstPost.body}</p>
+  </article>
+`;
+state.Blog.main = demoHTML;
+})
