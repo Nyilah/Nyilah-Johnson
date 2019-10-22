@@ -40,7 +40,7 @@ router
 .on(':page', params => render(state[capitalize(params.page)]
 )
 )
-.on("/", render())
+.on("/",()=> render())
 .resolve();
 
 axios
@@ -56,3 +56,36 @@ state.Blog.main = response.data.map(
   ).join('');
 
 })
+//Gallery
+db.collection("class")
+  .get()
+
+  /**
+   * Developer's Note: There is no straightforward way to get data back as an Array,
+   * so 'superpowers' are useless.😞
+   */
+  .then(querySnapshots => {
+    state.Gallery.main =
+      `<div class="gallery">` +
+      querySnapshots.docs
+        .map(doc => {
+          const { caption, credit, imageUrl } = doc.data();
+
+          return `
+        <figure>
+          <img src="${imageUrl}" alt="">
+          <figcaption>${caption} - ${credit}</figcaption>
+        </figure>
+      `;
+        })
+        .join(" ") +
+      `</div>`;
+
+    if (
+      router.lastRouteResolved().params &&
+      capitalize(router.lastRouteResolved().params.page) === "Gallery"
+    ) {
+      render(state.Gallery);
+    }
+  })
+  .catch(err => console.error("Error loading pics", err));

@@ -1,4 +1,4 @@
-import "@firebase/firestore" from
+import "@firebase/firestore"
 import firebase from "./firebase-init"
 
 

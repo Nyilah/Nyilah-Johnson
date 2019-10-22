@@ -15,6 +15,26 @@
 
 /* body */
 
+figure,
+img,
+video {
+  max-width: 100%;
+}
+figcaption {
+  margin: var(--base-spacing) 0;
+  text-align: center;
+}
+.gallery {
+  display: flex;
+  flex-direction: column;
+  margin: var(--base-spacing) auto;
+  width: 80vw;
+}
+
+.gallery figure {
+  margin: var(--base-spacing) 0;
+}
+
 body {
   font-family: "Titillium Web", sans-serif;
   background: var(--background);
@@ -252,6 +272,16 @@ textarea {
   footer ul {
     justify-content: space-evenly;
   }
+
+  .gallery {
+    display: grid;
+    grid-gap: calc(var(--base-spacing) * 2);
+    grid-template-columns: repeat(3, 320px);
+    grid-template-rows: repeat(5, 550px);
+    justify-content: center;
+    padding: calc(var(--base-spacing) * 2);
+    max-width: 1200px;
+  }
 }
 
 /* media queries for desktop */
@@ -309,6 +339,16 @@ textarea {
 
   label {
     font-size: 1.2em;
+  }
+
+  .gallery {
+    display: grid;
+    grid-gap: calc(var(--base-spacing) * 2);
+    grid-template-columns: repeat(3, 320px);
+    grid-template-rows: repeat(5, 550px);
+    justify-content: center;
+    padding: calc(var(--base-spacing) * 2);
+    max-width: 1200px;
   }
 }
 
