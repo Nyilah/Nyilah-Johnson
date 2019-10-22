@@ -12,8 +12,11 @@ import axios from "axios";
 
 import { capitalize } from 'lodash';
 
+import { db } from "./firebase"
+
 
 const router = new Navigo(location.origin);
+
 
 
 // use state to render the appropriate heading
