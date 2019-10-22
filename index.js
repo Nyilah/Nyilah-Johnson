@@ -10,6 +10,8 @@ import Navigo from "navigo";
 
 import axios from "axios";
 
+import { capitalize } from 'lodash';
+
 
 const router = new Navigo(location.origin);
 
@@ -20,7 +22,7 @@ const router = new Navigo(location.origin);
 //the parameter st represents a piece of state
 
 function render(st = state.Home) {
-document.querySelector("#root").innerHTML =`
+document.querySelector("#root").innerHTML = `
 ${Header(st)}
 ${Nav()}
 ${Main(st)}
@@ -32,7 +34,8 @@ router.updatePageLinks();
 
 router
 
-.on(':page', params => render(state[`${params.page.slice(0, 1).toUpperCase()}${params.page.slice(1).toLowerCase()}`])
+.on(':page', params => render(state[capitalize(params.page)]
+)
 )
 .on("/", render())
 .resolve();
@@ -40,13 +43,13 @@ router
 axios
   .get("https://jsonplaceholder.typicode.com/posts")
   .then(response => {
-state.Blog.main = response.data;
-const firstPost = response.data[0];
-const demoHTML= `
+state.Blog.main = response.data.map(
+  ({ title, body }) => `
 <article>
-<h2>${firstPost.title}</h2>
-  <p>${firstPost.body}</p>
+<h2>${title}</h2>
+  <p>${body}</p>
   </article>
-`;
-state.Blog.main = demoHTML;
+`
+  ).join('');
+
 })

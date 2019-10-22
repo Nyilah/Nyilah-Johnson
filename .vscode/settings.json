@@ -21,4 +21,7 @@
   "files.eol": "\n",
   "stylelint.enable": true,
   "css.validate": false,
+  "cSpell.words": [
+    "hiddenul"
+  ],
 }
