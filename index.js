@@ -12,7 +12,9 @@ import axios from "axios";
 
 import { capitalize } from 'lodash';
 
-import { db } from "./firebase"
+
+import { auth, db } from "./firebase";
+console.log(auth)
 
 
 const router = new Navigo(location.origin);
