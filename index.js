@@ -2,7 +2,7 @@
 // import Main from "./components/Main";
 // import Nav from "./components/Nav";
 // import Footer from"./components/Footer";
-import{Header, Nav, Main, Footer} from "./components"
+import { Header, Nav, Main, Footer } from "./components";
 
 import * as state from "./store";
 
@@ -10,16 +10,12 @@ import Navigo from "navigo";
 
 import axios from "axios";
 
-import { capitalize } from 'lodash';
-
+import { capitalize } from "lodash";
 
 import { auth, db } from "./firebase";
-console.log(auth)
-
+console.log(auth);
 
 const router = new Navigo(location.origin);
-
-
 
 // use state to render the appropriate heading
 // depending on the state of the app what page is actually
@@ -27,37 +23,34 @@ const router = new Navigo(location.origin);
 //the parameter st represents a piece of state
 
 function render(st = state.Home) {
-document.querySelector("#root").innerHTML = `
+  document.querySelector("#root").innerHTML = `
 ${Header(st)}
 ${Nav()}
 ${Main(st)}
 ${Footer()}
 `;
 
-router.updatePageLinks();
+  router.updatePageLinks();
 }
 
 router
 
-.on(':page', params => render(state[capitalize(params.page)]
-)
-)
-.on("/",()=> render())
-.resolve();
+  .on(":page", params => render(state[capitalize(params.page)]))
+  .on("/", () => render())
+  .resolve();
 
-axios
-  .get("https://jsonplaceholder.typicode.com/posts")
-  .then(response => {
-state.Blog.main = response.data.map(
-  ({ title, body }) => `
+axios.get("https://jsonplaceholder.typicode.com/posts").then(response => {
+  state.Blog.main = response.data
+    .map(
+      ({ title, body }) => `
 <article>
 <h2>${title}</h2>
   <p>${body}</p>
   </article>
 `
-  ).join('');
-
-})
+    )
+    .join("");
+});
 //Gallery
 db.collection("class")
   .get()
@@ -91,3 +84,21 @@ db.collection("class")
     }
   })
   .catch(err => console.error("Error loading pics", err));
+
+//admin
+render(state.Admin);
+
+const email = document.querySelector('[type="email]');
+const password = document.querySelector('[type="password]');
+
+document.querySelector("form").addEventListener("submit", e => {
+  e.preventDefault();
+
+  auth
+    .signInWithEmailAndPassword(email.value, password.value)
+    .catch(err => console.error("Got an error", err.message));
+});
+
+document.querySelector("button").addEventListener("click", () => {
+  auth.signOut().catch(err => console.log("Error signing out!", err.message));
+});
