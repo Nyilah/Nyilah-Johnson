@@ -52,18 +52,17 @@ axios.get("https://jsonplaceholder.typicode.com/posts").then(response => {
     .join("");
 });
 //Gallery
+// Gallery
 db.collection("class")
   .get()
-
-  /**
-   * Developer's Note: There is no straightforward way to get data back as an Array,
-   * so 'superpowers' are useless.😞
-   */
   .then(querySnapshots => {
-    state.Gallery.main =
+
+    // Let's make sure to update instead of overwriting our markup
+    state.Gallery.main +=
       `<div class="gallery">` +
       querySnapshots.docs
         .map(doc => {
+          // Combine `const` with destructuring to create 3 variables from the keys in our object literal
           const { caption, credit, imageUrl } = doc.data();
 
           return `
@@ -81,6 +80,27 @@ db.collection("class")
       capitalize(router.lastRouteResolved().params.page) === "Gallery"
     ) {
       render(state.Gallery);
+
+      const imageUrl = document.querySelector("#imageUrl");
+      const caption = document.querySelector("#caption");
+      const credit = document.querySelector("#credit");
+
+      document.querySelector("form").addEventListener("submit", e => {
+        e.preventDefault();
+
+        db.collection("class")
+          .add({
+            imageUrl: imageUrl.value,
+            caption: caption.value,
+            credit: credit.value
+          })
+          .then(function(docRef) {
+            console.log("Document written with ID: ", docRef.id);
+          })
+          .catch(function(error) {
+            console.error("Error adding document: ", error);
+          });
+      });
     }
   })
   .catch(err => console.error("Error loading pics", err));
@@ -103,7 +123,7 @@ if (
       document.querySelector("button").addEventListener("click", () => {
         auth
           .signOut()
-          .then(() => {
+          .then(() => { //change page display to show a 'logout
             state.Admin.main = `
             <form>
       <input type="email" />
