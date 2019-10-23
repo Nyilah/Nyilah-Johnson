@@ -86,19 +86,49 @@ db.collection("class")
   .catch(err => console.error("Error loading pics", err));
 
 //admin
-render(state.Admin);
+// Admin
+// TODO: Rather than grabbing each element manually, consider using (`event.target.elements`) on the `submit` event.
+// Are we on Admin page?
+if (
+  router.lastRouteResolved().params &&
+  capitalize(router.lastRouteResolved().params.page) === "Admin"
+) {
+  // Are we logged in?
+  auth.onAuthStateChanged(user => {
+    if (user) { // We are logged in!
+      state.Admin.main = `<button type="button">Log out!</button>`;
 
-const email = document.querySelector('[type="email]');
-const password = document.querySelector('[type="password]');
+      render(state.Admin);
 
-document.querySelector("form").addEventListener("submit", e => {
-  e.preventDefault();
+      document.querySelector("button").addEventListener("click", () => {
+        auth
+          .signOut()
+          .then(() => {
+            state.Admin.main = `
+            <form>
+      <input type="email" />
+      <input type="password" />
+      <input type="submit" value="Log in!" />
+    </form>
+      `;
+      render(state.Admin);
+          })
+          .catch(err => console.log("Error signing out", err.message));
+      });
+    } else {
+      console.log('you logged in');
+      const email = document.querySelector('[type="email"]');
+      const password = document.querySelector('[type="password"]');
 
-  auth
-    .signInWithEmailAndPassword(email.value, password.value)
-    .catch(err => console.error("Got an error", err.message));
-});
+      document.querySelector("form").addEventListener("submit", e => {
+      e.preventDefault();
 
-document.querySelector("button").addEventListener("click", () => {
-  auth.signOut().catch(err => console.log("Error signing out!", err.message));
-});
+      auth
+      .signInWithEmailAndPassword(email.value, password.value)
+      .catch(err => console.error("Got an error", err.message));
+      });
+    }
+  });
+
+  render(state.Admin);
+}
